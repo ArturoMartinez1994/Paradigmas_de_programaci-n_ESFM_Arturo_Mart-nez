@@ -1,0 +1,26 @@
+ Manual de instalación de git
+
+
+
+ 1 Ir a la cuenta de soporte.
+   contraseña(udiesfmipn1936)
+
+ 2 Ingresar el comando "git" para verificar que no esté intalado.
+   
+ 3 Ingresar el comando "sudo apt-get install git" (Sí a todo XD)
+
+ 4 Ingresar el comando "apt-get update"
+
+ 5 Ingresar el comando "apt-get upgrade"
+
+ 6 Ingrear el comando "git" (Ya debería aparecerte instaladou)
+
+ Instrucciones de git
+
+ git clone ------ (URL del repositorio)
+
+ git add ------ (archivo) ("." para muchos archivos)
+
+ git comit_m "Instructivo"
+
+ git push
