@@ -59,12 +59,12 @@ def subdivision_recursiva(nodo:Nodo, k:int):
     subdivision_recursiva(nodo.x1, k)
 
     p = cuantas_contiene(nodo.x0, nodo.y0+h_, w_, h_, nodo.particulas)
-    nodo.x2  = Nodo(nodo.x0, nodo.y0, w_, h_, p)
-    subdivision_recursiva(nodo.x1, k)
+    nodo.x2  = Nodo(nodo.x0, nodo.y0+h_, w_, h_, p)
+    subdivision_recursiva(nodo.x2, k)
 
     p = cuantas_contiene(nodo.x0+w_, nodo.y0, w_, h_, nodo.particulas)
-    nodo.x3 = Nodo(nodo.x0, nodo.y0+h_, w_, h_, p)
-    subdivision_recursiva(nodo.x2, k)
+    nodo.x3 = Nodo(nodo.x0+w_, nodo.y0, w_, h_, p)
+    subdivision_recursiva(nodo.x3, k)
 
     p = cuantas_contiene(nodo.x0+w_, nodo.y0+h_, w_, h_, nodo.particulas)
     nodo.x4 = Nodo(nodo.x0+w_, nodo.y0+h_, w_, h_, p)
