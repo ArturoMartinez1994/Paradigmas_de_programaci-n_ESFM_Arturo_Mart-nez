@@ -70,7 +70,7 @@ def solucion_kernel(u_d,un_d,udx2_0,udx2_1,dt,n_0,n_1,kd):
     if ii==0 or jj==0 or ii==n_0-1 or jj==n_1-1:
         unueva = 0.0
     else:
-        unueva = evolucion_gpu(u_d,n_0,n_1,dux2_0,udx2_1,dt,kd,i)
+        unueva = evolucion_gpu(u_d,n_0,n_1,udx2_0,udx2_1,dt,kd,i)
     if i == int ((n_0*n_1)/2)+int(n_0/2):
         unueva = 1.0
     un_d[i] = unueva
@@ -104,15 +104,15 @@ for t in range(1,pasos+1):
 #======================
 # Pasar arreglo al CPU
 #======================
-d_d.copy_to_host(u)
+u_d.copy_to_host(u)
 end = time.time()
-print("Tardó: ",end-star,"s")
+print("Tardó: ",end-start,"s")
 
 #================
 # Graficar en 3D
 #================
 u = np.reshape(u,(n[0],n[1]))
 x,y = np.meshgrid(np.arange(0,L[0],dx[0]),np.arange(0,L[1],dx[1]))
-ax = plt.axes(projetion='3d')
+ax = plt.axes(projection='3d')
 ax.plot_surface(x,y,u,cmap=cm.hsv)
 plt.show()
